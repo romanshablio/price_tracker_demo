@@ -159,6 +159,8 @@ bitcoin_prices/
    # (если вы скачали архив, распакуйте его сюда)
    ```
 
+   После перейдите к репозиторию https://github.com/romanshablio/price_tracker_nuxt и сохраните содержимое репозитория в корень проекта "bitcoin-prices"
+
 2. **Создание файла .env:**
    ```bash
    # Создайте файл .env в корневой папке проекта
@@ -175,12 +177,7 @@ bitcoin_prices/
    # Остановите все запущенные контейнеры, если они есть
    docker-compose down
    
-   # Очистите кэш Nuxt, если возникают проблемы с импортом модулей
-   cd nuxt-app
-   npx nuxi cleanup
-   cd ..
-   
-   # Запустите все сервисы заново
+   # Запустите все сервисы 
    docker-compose up --build
    ```
    
@@ -195,13 +192,16 @@ bitcoin_prices/
 
 1. **Ошибка импорта модулей:**
    - Если вы видите ошибки импорта CommonJS модулей (например, pg), очистите кэш Nuxt:
-     ```bash
+```bash
      cd nuxt-app
      npx nuxi cleanup
-     cd ..
+```
+Псоле запустите процесс заново
+```bash
+     cd ../
      docker-compose down
      docker-compose up --build
-     ```
+```
 
 2. **Ошибка "Port 3000 is already in use":**
    - Остановите все запущенные контейнеры:
